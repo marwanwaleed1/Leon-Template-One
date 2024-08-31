@@ -1,0 +1,594 @@
+/*=====================================================
+Station:Start [ Template Info ]
+=======================================================
+>> name      : Leon
+>> Version   : 1.0.0
+>> Platform  : Front-End
+>> Category  : Landing Page
+>> Homepage  : https://blogg-code.blogspot.com
+*/
+
+/*=====================================================
+Station:01 [ Variables ]
+=====================================================*/
+:root {
+  --primary: #10cab7;
+  --secondary-color: #2c4755;
+}
+
+/*=====================================================
+Station:02 [ Reset ]
+=====================================================*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+img,
+svg {
+  vertical-align: middle;
+}
+
+/*=====================================================
+Station:03 [ Display ]
+=====================================================*/
+.container {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1320px;
+  }
+}
+
+/*=====================================================
+Station:04 [ Content ]
+=====================================================*/
+body {
+  font-family: "Barlow", system-ui;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  background-color: #f8f8f8;
+}
+
+/*=====================================================
+Station:05 [ Header ]
+=====================================================*/
+.header {
+  padding: 20px;
+}
+
+.header > .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header .logo {
+  width: 60px;
+}
+
+.header .links {
+  position: relative;
+}
+
+.header .links .icon {
+  width: 30px;
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  cursor: pointer;
+}
+
+.header .links .icon span {
+  width: 100%;
+  height: 2px;
+  margin-bottom: 5px;
+  background-color: #333;
+}
+
+.header .links .icon span:nth-child(2) {
+  width: 60%;
+  transition: width 0.3s ease;
+}
+
+.header .links:hover .icon span:nth-child(2) {
+  width: 100%;
+}
+
+.header .links ul {
+  position: absolute;
+  padding: 8px 0;
+  top: calc(100% + 15px);
+  right: 0;
+  z-index: 10;
+  width: 180px;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  visibility: hidden;
+  background-color: #fff;
+  border-radius: 0.375rem;
+  transition: all 0.3s ease;
+}
+
+.header .links ul::before {
+  content: "";
+  border-width: 10px;
+  border-style: solid;
+  border-color: transparent transparent #eee transparent;
+  position: absolute;
+  top: -20px;
+  right: 5px;
+}
+
+.header .links ul li a {
+  display: flex;
+  align-items: center;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #333;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.header .links ul li a:hover {
+  background-color: #ece5e5;
+}
+
+.header .links:hover ul {
+  opacity: 1;
+  visibility: visible;
+}
+
+/*=====================================================
+Station:06 [ Landing ]
+=====================================================*/
+.landing {
+  position: relative;
+  height: calc(100vh - 64px);
+  background-image: url("../images/landing.jpg");
+  background-size: cover;
+}
+
+.landing .intro-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  text-align: center;
+  transform: translate(-50%, -50%);
+}
+
+.landing .intro-text h1 {
+  font-size: 60px;
+  font-weight: 800;
+  color: var(--primary);
+}
+
+.landing .intro-text p {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
+}
+
+/*=====================================================
+Station:07 [ Features ]
+=====================================================*/
+.features {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  background-color: #f6f6f6;
+}
+
+.features .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.features .feat {
+  padding: 20px;
+  text-align: center;
+}
+
+.features .feat i {
+  color: var(--primary);
+}
+
+.features .feat h3 {
+  font-size: 1.25rem;
+  font-weight: 800;
+  margin: 20px 0;
+}
+
+.features .feat p {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #777;
+}
+
+/*=====================================================
+Station:08 [ Services ]
+=====================================================*/
+.services {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  background-color: #f6f6f6;
+}
+
+.services-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.services-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.services-item .text {
+  flex: 1;
+}
+
+.services-item i {
+  color: var(--primary);
+}
+
+.services-item .text h6 {
+  font-size: 1.125rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.services-item .text p {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #777;
+}
+
+.services-image {
+  position: relative;
+  text-align: center;
+}
+
+.services-image::before {
+  content: "";
+  width: 100px;
+  height: calc(100% + 100px);
+  position: absolute;
+  top: -50px;
+  right: 0;
+  z-index: 1;
+  background-color: #2c4755;
+}
+
+.services-image img {
+  position: relative;
+  z-index: 2;
+  width: 260px;
+}
+
+/*=====================================================
+Station:09 [ Portfolio ]
+=====================================================*/
+.portfolio {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  background-color: #f6f6f6;
+}
+
+.portfolio-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 80px;
+}
+
+.portfolio .card {
+  background-color: #fff;
+}
+
+.portfolio .card img {
+  width: 100%;
+}
+
+.portfolio .card .info {
+  padding: 20px;
+}
+
+.portfolio .card .info h3 {
+  color: #000;
+  margin-bottom: 8px;
+}
+
+.portfolio .card .info p {
+  color: #777;
+  margin-bottom: 0;
+}
+
+/*=====================================================
+Station:10 [ About ]
+=====================================================*/
+.about {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.about-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 100px;
+}
+
+.about-content .image-column {
+  width: 250px;
+  height: 375px;
+  position: relative;
+}
+
+.about-content .info-column {
+  flex-basis: calc(100% - 500px);
+}
+
+.about-content .image-column img {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+}
+
+.about-content .image-column::before {
+  content: "";
+  position: absolute;
+  top: -40px;
+  left: -20px;
+  width: 100px;
+  height: calc(100% + 80px);
+  background-color: #ebeced;
+}
+
+.about-content .image-column::after {
+  content: "";
+  position: absolute;
+  top: -40px;
+  right: -80px;
+  width: 120px;
+  height: 100%;
+  border-left: 80px solid #ccc;
+  border-bottom: 80px solid #ccc;
+}
+
+.about-content .info-column p:first-child {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #000;
+}
+
+.about-content .info-column hr {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.about-content .info-column p:last-child {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #777;
+}
+
+/*=====================================================
+Station:11 [ Contact ]
+=====================================================*/
+.contact {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  background-color: #f6f6f6;
+}
+
+.contact .info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact .info .label {
+  font-size: 30px;
+  font-weight: 800;
+  color: var(--secondary-color);
+  margin-bottom: 0.5rem;
+}
+
+.contact .info a {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+
+.contact .info .social {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.contact .info .social i {
+  font-size: 18px;
+  color: var(--secondary-color);
+  cursor: pointer;
+}
+
+/*=====================================================
+Station:12 [ Footer ]
+=====================================================*/
+.footer {
+  position: relative;
+  padding: 30px 0;
+  text-align: center;
+  background-color: var(--secondary-color);
+}
+
+.footer p {
+  font-size: 1rem;
+  color: #fff;
+  margin-bottom: 0;
+}
+
+.footer p span {
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.footer a {
+  position: absolute;
+  top: 0;
+  left: calc(50% - 20px);
+  width: 100%;
+  transform: translateY(-50%);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  color: var(--secondary-color);
+  background-color: #fff;
+  border: 1px solid var(--primary);
+  border-radius: 50%;
+}
+
+/*=====================================================
+Station:04 [ Standard ]
+=====================================================*/
+.special-heading {
+  font-size: 100px;
+  font-weight: 800;
+  line-height: 1.25;
+  color: #c7c7c7;
+  text-align: center;
+}
+
+.special-description {
+  margin: 12px 0 60px;
+  font-size: 20px;
+  text-align: center;
+  color: #777;
+}
+
+/*=====================================================
+Station:04 [ Responsive ]
+=====================================================*/
+@media (max-width: 768px) {
+  .special-heading {
+    font-size: 60px;
+  }
+
+  .special-description {
+    font-size: 18px;
+  }
+
+  .services-item {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .services-item .text {
+    text-align: center;
+  }
+
+  .services-image {
+    display: none;
+  }
+
+  .about-content {
+    align-items: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .about-content .info-column {
+    flex-basis: 100%;
+    text-align: center;
+  }
+
+  .about-content .image-column::before,
+  .about-content .image-column::after {
+    display: none;
+  }
+
+  .contact .info .label {
+    font-size: 26px;
+  }
+}
